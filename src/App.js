@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import { Contador } from './componentes/Contador';
+import { Placar } from './componentes/Placar';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const dados = {
+  partida: {
+    estadio: 'Maracanã',
+    data: '12/03/2020',
+    horario: '21:30'
+  },
+  casa: {
+    nome: 'Flamengo'
+  },
+  visitante: {
+    nome: 'Barcelona'
+  }
+};
+
+class App extends Component {
+  render() {
+    return (
+      <div>
+        |<h1>Estudo React Básico</h1>
+        <Contador />
+        <Placar partida={dados.partida} casa={dados.casa} visitante={dados.visitante} />
+      </div>
+    );
+  }
 }
 
 export default App;
