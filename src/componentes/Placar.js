@@ -20,19 +20,21 @@ export class Placar extends Component {
   }
 
   render() {
+    const { partida, casa, visitante } = this.props;
+    const estilo = { float: "left", "marginLeft": "20px"};
     return (
       <div>
         <h1>Placar</h1>
-        <div style={{ float: "left", marginRight: "20px" }}>
+        <div style={estilo}>
           <h3>Casa</h3>
-          <Time nome={this.props.casa.nome} gols={this.state.golsCasa} marcarGol={this.marcarGolCasa.bind(this)}/>
+          <Time nome={casa.nome} gols={this.state.golsCasa} marcarGol={this.marcarGolCasa.bind(this)}/>
         </div>
-        <div style={{ float: "left", marginRight: "20px" }}>
-          <Partida estadio={this.props.partida.estadio} data={this.props.partida.data} horario={this.props.partida.horario}/>
+        <div style={estilo}>
+          <Partida {...partida } />
         </div>
-        <div style={{ float: "left", marginRight: "20px" }}>
+        <div style={estilo}>
           <h3>Visitante</h3>
-          <Time nome={this.props.visitante.nome} gols={this.state.golsVisitante} marcarGol={this.marcarGolVisitante.bind(this)}/>
+          <Time nome={visitante.nome} gols={this.state.golsVisitante} marcarGol={this.marcarGolVisitante.bind(this)}/>
         </div>
         <div style={{ clear: "both" }}></div>
       </div>

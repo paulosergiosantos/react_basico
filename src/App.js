@@ -23,7 +23,7 @@ class App extends Component {
       <div>
         |<h1>Estudo React Básico</h1>
         <Contador />
-        <Placar partida={dados.partida} casa={dados.casa} visitante={dados.visitante} />
+        <Placar {...dados} />
       </div>
     );
   }
