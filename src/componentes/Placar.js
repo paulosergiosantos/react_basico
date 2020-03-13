@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Partida } from './Partida';
 import { Time } from './Time';
+import { Cronometro } from './Cronometro';
 
 export class Placar extends Component {
   constructor() {
@@ -22,7 +23,7 @@ export class Placar extends Component {
   render() {
     const { partida, casa, visitante } = this.props;
     const estilo = { float: "left", "marginLeft": "20px" };
-    console.log(casa, visitante);
+
     return (
       <div>
         <h1>Placar</h1>
@@ -32,6 +33,7 @@ export class Placar extends Component {
         </div>
         <div style={estilo}>
           <Partida {...partida} />
+          <Cronometro />
         </div>
         <div style={estilo}>
           <h3>Visitante</h3>
