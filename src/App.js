@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { Contador } from './componentes/Contador';
 import { Placar } from './componentes/Placar';
+import { Times } from './utils/Times';
 
 const dados = {
   partida: {
@@ -9,15 +10,12 @@ const dados = {
     data: '12/03/2020',
     horario: '21:30'
   },
-  casa: {
-    nome: 'Flamengo'
-  },
-  visitante: {
-    nome: 'Barcelona'
-  }
+  casa: Times.FLAMENGO,
+  visitante: Times.BARCELONA
 };
 
 class App extends Component {
+
   render() {
     return (
       <div>
